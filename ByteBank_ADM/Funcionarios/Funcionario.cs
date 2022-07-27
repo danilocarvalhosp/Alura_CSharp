@@ -19,7 +19,7 @@ namespace ByteBank_ADM.Funcionarios
         public string Cpf { get; set; }
         public double Salario { get; set; }
 
-        public double getBonificacao() {
+        public virtual double getBonificacao() {
             return Salario * 0.10;
         }
     }
