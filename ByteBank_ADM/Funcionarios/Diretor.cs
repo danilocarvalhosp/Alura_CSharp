@@ -11,5 +11,9 @@ namespace ByteBank_ADM.Funcionarios
         public override double getBonificacao() {
             return Salario + base.getBonificacao();
         }
+
+        public Diretor() {
+            Console.WriteLine("Criando um diretor.");
+        }
     }
 }

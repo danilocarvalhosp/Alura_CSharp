@@ -22,5 +22,12 @@ namespace ByteBank_ADM.Funcionarios
         public virtual double getBonificacao() {
             return Salario * 0.10;
         }
+
+        public static int totalFuncionarios { get; private set; }
+
+        public Funcionario() {
+            Console.WriteLine("Criando um funcionário.");
+            totalFuncionarios++;
+        }
     }
 }
