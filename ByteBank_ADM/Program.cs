@@ -9,6 +9,9 @@ void CalcularBonificacao() {
     Designer pedro = new Designer("833.222.048-39");
     pedro.Nome = "Pedro";
 
+    Desenvolvedor samya = new Desenvolvedor("254858965844");
+    samya.Nome = "Samya";
+
     Diretor paula = new Diretor("159.753.398-04");
     paula.Nome = "Paula";
 
@@ -22,6 +25,7 @@ void CalcularBonificacao() {
     gerenciador.Registrar(paula);
     gerenciador.Registrar(igor);
     gerenciador.Registrar(camila);
+    gerenciador.Registrar(samya);
 
     Console.WriteLine("Total de Bonificação: " + gerenciador.getBonificacao());
 }

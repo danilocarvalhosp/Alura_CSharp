@@ -12,10 +12,6 @@ namespace ByteBank_ADM.Funcionarios
         public string Cpf { get; private set; }
         public double Salario { get; protected set; }
 
-        public virtual double getBonificacao() {
-            return Salario * 0.10;
-        }
-
         public static int totalFuncionarios { get; private set; }
 
         public Funcionario(string cpf, double salario) {
@@ -25,8 +21,8 @@ namespace ByteBank_ADM.Funcionarios
             totalFuncionarios++;
         }
 
-        public virtual void AumentarSalario() {
-            Salario += Salario * 0.10;
-        }
+        public abstract void AumentarSalario();
+
+        public abstract double getBonificacao();
     }
 }
