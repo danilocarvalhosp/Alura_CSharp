@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ByteBank_ADM.Funcionarios
 {
-    internal class GerenteContas : Funcionario
+    public class GerenteContas : Funcionario
     {
         public GerenteContas(string cpf) : base(cpf, 3000) {
 
@@ -20,5 +20,10 @@ namespace ByteBank_ADM.Funcionarios
             return Salario * 0.25;
         }
 
+        public string Senha { get; set; }
+
+        public bool Autenticar(string senha) {
+            return this.Senha == senha;
+        }
     }
 }
