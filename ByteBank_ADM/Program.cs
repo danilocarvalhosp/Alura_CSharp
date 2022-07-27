@@ -10,14 +10,12 @@ pedro.Nome = "Pedro";
 pedro.Cpf = "10252462425";
 pedro.Salario = 2000;
 
-//Console.WriteLine("Nome: " + pedro.Nome);
-//Console.WriteLine("CPF: " + pedro.Cpf);
-//Console.WriteLine("Salário: " + pedro.Salario);
-
 Diretor paula = new Diretor();
 paula.Nome = "Paula";
 paula.Cpf = "258746325894";
 paula.Salario = 5000;
+
+Funcionario andre = new Diretor();
 
 Console.WriteLine("Bonificação: " + pedro.getBonificacao());
 Console.WriteLine("Bonificação: " + paula.getBonificacao());

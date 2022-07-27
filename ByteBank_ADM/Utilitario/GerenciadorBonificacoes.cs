@@ -15,10 +15,6 @@ namespace ByteBank_ADM.Utilitario
             this.TotalBonificacao += funcionario.getBonificacao();
         }
 
-        public void Registrar(Diretor diretor) {
-            this.TotalBonificacao += diretor.getBonificacao();
-        }
-
         public double getBonificacao() {
             return this.TotalBonificacao;
         }
