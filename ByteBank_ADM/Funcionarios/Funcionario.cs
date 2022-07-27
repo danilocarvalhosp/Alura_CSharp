@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace ByteBank_ADM.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
-        // 0 - funcionário
-        // 1 - diretor
-        // 2 - designer
-        // N - ...
-
-        // private int _tipo;
-
         public string Nome { get; set; }
         public string Cpf { get; private set; }
         public double Salario { get; protected set; }
@@ -33,7 +26,7 @@ namespace ByteBank_ADM.Funcionarios
         }
 
         public virtual void AumentarSalario() {
-            this.Salario *= 1.1;
+            Salario += Salario * 0.10;
         }
     }
 }
