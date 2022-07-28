@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace ByteBank_ADM.ParceriaComercial
 {
-    public class ParceiroComercial : Autenticavel, Funcionario
+    public class ParceiroComercial : IAutenticavel
     {
-        public ParceiroComercial(string cpf, double salario) : base(cpf, salario) {
-        }
-
         public string Senha { get; set; }
 
         public bool Autenticar(string senha) {
