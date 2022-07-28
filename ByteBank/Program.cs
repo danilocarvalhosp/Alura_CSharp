@@ -8,7 +8,7 @@ namespace ByteBank
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string [] args)
         {
             try
             {
@@ -17,11 +17,17 @@ namespace ByteBank
                 Console.WriteLine(conta.Saldo);
                 conta.Sacar(500);
                 Console.WriteLine(conta.Saldo);
-            } catch (ArgumentException ex)
+            }
+            catch (ArgumentException ex)
             {
                 Console.WriteLine("Erro no parâmetro: " + ex.ParamName);
                 Console.WriteLine("Ocorreu um erro do tipo ArgumentException.");
                 Console.WriteLine(ex.Message);
+            }
+            catch (SaldoInsuficienteException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Exceção do tipo SaldoInsuficienteException.");
             }
 
             // Console.WriteLine(ContaCorrente.TaxaOperacao);
