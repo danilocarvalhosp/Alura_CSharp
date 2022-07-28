@@ -6,19 +6,21 @@ namespace ByteBank
 {
     public class ContaCorrente
     {
-        public Cliente Titular { get; private set; }
+        public Cliente Titular { get; set; }
 
-        // public static double TaxaOperacao { get; set; }
+        // public static double TaxaOperacao { get; private set; }
 
         public static int TotalDeContasCriadas { get; private set; }
 
-
         private int _agencia;
-        public int Agencia {
-            get {
+        public int Agencia
+        {
+            get
+            {
                 return _agencia;
             }
-            private set {
+            private set
+            {
                 if (value <= 0)
                 {
                     return;
@@ -31,11 +33,14 @@ namespace ByteBank
 
         private double _saldo = 100;
 
-        public double Saldo {
-            get {
+        public double Saldo
+        {
+            get
+            {
                 return _saldo;
             }
-            set {
+            set
+            {
                 if (value < 0)
                 {
                     return;
@@ -46,7 +51,8 @@ namespace ByteBank
         }
 
 
-        public ContaCorrente(int agencia, int numero) {
+        public ContaCorrente(int agencia, int numero)
+        {
             Agencia = agencia;
             Numero = numero;
 
@@ -61,14 +67,12 @@ namespace ByteBank
                 throw new ArgumentException("O argumento número deve ser maior que 0.", nameof(numero));
             }
 
-
-            throw new System.ArgumentException("Os argumentos número e agência devem ser maiores que zero.");
-
             TotalDeContasCriadas++;
         }
 
 
-        public bool Sacar(double valor) {
+        public bool Sacar(double valor)
+        {
             if (_saldo < valor)
             {
                 return false;
@@ -78,12 +82,14 @@ namespace ByteBank
             return true;
         }
 
-        public void Depositar(double valor) {
+        public void Depositar(double valor)
+        {
             _saldo += valor;
         }
 
 
-        public bool Transferir(double valor, ContaCorrente contaDestino) {
+        public bool Transferir(double valor, ContaCorrente contaDestino)
+        {
             if (_saldo < valor)
             {
                 return false;
