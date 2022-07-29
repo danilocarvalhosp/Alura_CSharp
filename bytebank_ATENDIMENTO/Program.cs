@@ -160,9 +160,9 @@ void TestaArrayDeContasCorrentes()
 
 List<ContaCorrente> _listaDeContas = new List<ContaCorrente>()
 {
-    new ContaCorrente(95, "123456-X"){Saldo = 100},
-    new ContaCorrente(95, "951258-X"){Saldo = 200},
-    new ContaCorrente(94, "987321-W"){Saldo = 60},
+    new ContaCorrente(95, "123456-X"){Saldo = 100, Titular = new Cliente{Cpf="11111", Nome="Henrique"} },
+    new ContaCorrente(95, "951258-X"){Saldo = 200, Titular = new Cliente{Cpf="22222", Nome="Pedro"} },
+    new ContaCorrente(94, "987321-W"){Saldo = 60, Titular = new Cliente{Cpf="33333", Nome="Marisa"} }
 };
 
 AtendimentoCliente();
@@ -207,6 +207,9 @@ void AtendimentoCliente()
                 case '3':
                     RemoverContas();
                     break;
+                case '4':
+                    OrdenarContas();
+                    break;
                 default:
                     Console.WriteLine("Opção não implementada.");
                     break;
@@ -218,6 +221,13 @@ void AtendimentoCliente()
         Console.WriteLine($"{excecao.Message}");
     }
 
+}
+
+void OrdenarContas()
+{
+    _listaDeContas.Sort();
+    Console.WriteLine("... Lista de contas ordenada ...");
+    Console.ReadKey();
 }
 
 void RemoverContas()
