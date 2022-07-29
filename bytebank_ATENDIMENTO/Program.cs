@@ -97,6 +97,13 @@ void TestaArrayDeContasCorrentes()
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+
+    var contaDoAndre = new ContaCorrente(963, "123456-X");
+    listaDeContas.Adicionar(contaDoAndre);
+    listaDeContas.ExibeLista();
+    Console.WriteLine("=================");
+    listaDeContas.Remover(contaDoAndre);
+    listaDeContas.ExibeLista();
 }
 
 TestaArrayDeContasCorrentes();
