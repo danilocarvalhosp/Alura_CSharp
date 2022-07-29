@@ -2,7 +2,8 @@
 
 int [] idades = new int [5];
 
-TestaArrayInt();
+// TestaArrayInt();
+TestaBuscarPalavra();
 
 void TestaArrayInt()
 {
@@ -25,6 +26,29 @@ void TestaArrayInt()
 
     int media = acumulador / idades.Length;
     Console.WriteLine($"Média de idades = {media}");
+}
+
+void TestaBuscarPalavra()
+{
+    string [] arrayDePalavras = new string [5];
+
+    for (int i = 0; i < arrayDePalavras.Length; i++)
+    {
+        Console.WriteLine($"Digite {i + 1}ª Palavra: ");
+        arrayDePalavras [i] = Console.ReadLine();
+    }
+
+    Console.Write("Digite a palavra a ser encontrada: ");
+    var busca = Console.ReadLine();
+
+    foreach (string palavra in arrayDePalavras)
+    {
+        if (palavra.Equals(busca))
+        {
+            Console.WriteLine($"Palavra encontrada = {busca}.");
+            break;
+        }
+    }
 }
 
 
