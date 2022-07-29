@@ -204,6 +204,9 @@ void AtendimentoCliente()
                 case '2':
                     ListarContas();
                     break;
+                case '3':
+                    RemoverContas();
+                    break;
                 default:
                     Console.WriteLine("Opção não implementada.");
                     break;
@@ -215,6 +218,36 @@ void AtendimentoCliente()
         Console.WriteLine($"{excecao.Message}");
     }
 
+}
+
+void RemoverContas()
+{
+    Console.Clear();
+    Console.WriteLine("====================================");
+    Console.WriteLine("===        REMOVER CONTAS        ===");
+    Console.WriteLine("====================================");
+    Console.WriteLine("\n");
+    Console.Write("Informe o número da Conta: ");
+
+    string numeroConta = Console.ReadLine();
+    ContaCorrente conta = null;
+    foreach (var item in _listaDeContas)
+    {
+        if (item.Conta.Equals(numeroConta))
+        {
+            conta = item;
+        }
+    }
+    if (conta != null)
+    {
+        _listaDeContas.Remove(conta);
+        Console.WriteLine("... Conta removida da lista! ...");
+    }
+    else
+    {
+        Console.WriteLine("... Conta para remoção não encontrada ...");
+    }
+    Console.ReadKey();
 }
 
 void ListarContas()
